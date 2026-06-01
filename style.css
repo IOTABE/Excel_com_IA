@@ -1,0 +1,168 @@
+/* -------------------------------------------------------
+   Porsche Dashboard – Premium Dark Theme
+   ------------------------------------------------------- */
+:root {
+  /* Primary Porsche colors (adjusted for accessibility) */
+  --porsche-red: #d5001d;
+  --porsche-black: #111111;
+  --porsche-gray: #2e2e2e;
+  --porsche-light: #f5f5f5;
+  --accent: #00b3ff; /* subtle accent for highlights */
+  --bg-gradient: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+}
+
+/* Global reset and smooth scrolling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg-gradient);
+  color: var(--porsche-light);
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: rgba(0, 0, 0, 0.4) url('file:///home/gti/.gemini/antigravity-ide/brain/ce516d22-27f7-4e52-b92c-8e87a7d28565/porsche_hero_1780316638326.png') center/cover no-repeat;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Filters section styling (glassmorphism) */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 1rem;
+  border-radius: 8px;
+  backdrop-filter: blur(6px);
+}
+
+.filters > * {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--porsche-light);
+  padding: 0.6rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.filters > *:focus, .filters > *:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: var(--porsche-red);
+  outline: none;
+}
+  text-align: center;
+  padding: 2rem 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+header h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--porsche-red);
+  letter-spacing: 0.5px;
+}
+
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.controls > * {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--porsche-light);
+  padding: 0.6rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.controls > *:focus, .controls > *:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--porsche-red);
+  outline: none;
+}
+
+/* Card layout for charts */
+.charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 1rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+}
+.card canvas {
+  width: 100% !important;
+  height: 250px !important;
+}
+
+/* Table styling */
+.table-card {
+  overflow-x: auto;
+}
+#top-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#top-table th, #top-table td {
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+#top-table th {
+  background: rgba(0,0,0,0.25);
+  color: var(--porsche-red);
+  font-weight: 600;
+}
+#top-table tbody tr:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+/* Micro‑animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.card {
+  animation: fadeInUp 0.45s ease forwards;
+  opacity: 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  header h1 { font-size: 1.8rem; }
+  .controls { flex-direction: column; align-items: stretch; }
+}

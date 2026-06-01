@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Porsche Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Porsche Sales Dashboard</title>
+<meta name="description" content="Premium Porsche sales dashboard with elegant UI, charts, and filters aligned with Porsche Brazil branding.">
+<link rel="stylesheet" href="style.css" />
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <!-- SheetJS (xlsx) -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Porsche Brasil – Dashboard de Vendas</h1>
+  </header>
+  <main>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        // Initialize dashboard with embedded data
+        populateFilters();
+        applyFilters();
+        renderCharts();
+      });
+    </script>
+    <section class="filters">
+  
+      <select id="modelSelect"><option value="">Todos os Modelos</option></select>
+      <select id="yearSelect"><option value="">Todos os Anos</option></select>
+      <select id="citySelect"><option value="">Todas as Cidades</option></select>
+      <select id="paySelect"><option value="">Todos os Métodos</option></select>
+    </section>
+
+    <section class="charts">
+      <div class="card">
+        <canvas id="barChart"></canvas>
+      </div>
+      <div class="card">
+        <canvas id="lineChart"></canvas>
+      </div>
+      <div class="card">
+        <canvas id="scatterChart"></canvas>
+      </div>
+      <div class="card table-card">
+        <table id="top-table">
+          <thead>
+            <tr><th>Modelo</th><th>Ano</th><th>Cidade</th><th>Preço (R$)</th></tr>
+          </thead>
+          <tbody id="topTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
